@@ -1,0 +1,65 @@
+<div class="container-fluid">
+
+  <div class="row">
+      <div class="col-md-2 mt-5">
+          <div class="card border-0 shadow p-3">
+              <div class="form-floating mb-3 tetx-center">
+                  <h5 class="text-center text-dark">Add Users</h5>
+              </div>
+                  <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="prdObj.Name">
+                      <label for="firstname">name</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="prdObj.Email">
+                      <label for="lastName">email</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="prdObj.mobile">
+                      <label for="email">mobile</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="mobile" name="mobile" [(ngModel)]="prdObj.Password">
+                    <label for="mobile">password</label>
+                </div>
+                  <!-- <button type="button" class="btn btn-outline-dark" (click)="addProduct()">Add User</button> -->
+          </div>
+      </div>
+      <div class="col-md-10 mt-2">
+          <h5 class="text-danger"> Users List </h5>
+          <div class="card p-3 shadow">
+              <div class="card-body">
+                  <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">name</th>
+                          <th scope="col">E-mail</th>
+                          <th scope="col">Mobile</th>
+                          <th scope="col">Password</th>
+                          <th scope="col">Id</th>
+                          <th scope="col">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let prd of product">
+                          <td >{{prd.Name}}</td>
+                          <td>{{prd.Email}}</td>
+                          <td>{{prd.mobile}}</td>
+                          <td>{{prd.Password}}</td>
+                          <td >{{prd.uid}}</td>
+                          <td>
+                              <button class="btn btn-outline-danger  "(click)=" deleteProduct(prd)">Delete</button>
+                            <button class="btn btn-outline-info  "(click)=" update(prd)">Update</button>
+                            <button  class="btn btn-outline-success" (click)="updateproduct(prd)">save</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+</div>
+
